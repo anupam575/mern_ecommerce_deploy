@@ -6,12 +6,13 @@ const sendToken = (user, statusCode, res) => {
 
   const isProd = process.env.NODE_ENV === "production";
 
-  // ✅ Dynamic cookie config based on environment
+  // ✅ Updated cookie options with path for production
   const accessOptions = {
     expires: new Date(Date.now() + 15 * 60 * 1000), // 15 minutes
     httpOnly: true,
-    secure: isProd,
+    secure: isProd,          // must be true for HTTPS
     sameSite: isProd ? "None" : "Lax",
+    path: "/",               // 🔹 send cookie for all routes
   };
 
   const refreshOptions = {
@@ -19,6 +20,7 @@ const sendToken = (user, statusCode, res) => {
     httpOnly: true,
     secure: isProd,
     sameSite: isProd ? "None" : "Lax",
+    path: "/",               // 🔹 send cookie for all routes
   };
 
   // ✅ Send cookies and minimal user info
