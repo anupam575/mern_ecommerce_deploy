@@ -7,7 +7,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./login.css";
 
-// ✅ Axios default to send cookies
+// ✅ Always send credentials for cookie-based auth
 axios.defaults.withCredentials = true;
 
 // 🔹 Initial form state
@@ -27,8 +27,10 @@ const Login = () => {
   // 🔹 Auto refresh access token if expired
   const refreshAccessToken = async () => {
     try {
-      const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/refresh-token`);
-      // Update user info if needed
+      // Direct API URL
+      const { data } = await axios.get("http://localhost:4000/api/v1/refresh-token", {
+        withCredentials: true,
+      });
       if (data?.user) {
         dispatch(setUser(data.user));
       }
@@ -54,23 +56,19 @@ const Login = () => {
         withCredentials: true,
       };
 
-      console.log("Login payload:", formData);
-
+      // Direct API URL
       const { data } = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/v1/login`,
+        "http://localhost:4000/api/v1/login",
         formData,
         config
       );
 
-      // ✅ Set user in Redux
       dispatch(setUser(data.user));
 
       toast.success("✅ Logged in successfully!");
       setFormData(initialFormState);
 
-      setTimeout(() => {
-        navigate("/");
-      }, 1500);
+      setTimeout(() => navigate("/"), 1000);
     } catch (err) {
       console.error(err.response?.data || err.message);
       toast.error(err.response?.data?.message || "❌ Login failed!");
@@ -79,14 +77,14 @@ const Login = () => {
     }
   };
 
-  // 🔹 Optional: useEffect to auto-refresh token every 14 mins
+  // 🔹 Auto-refresh token every 14 minutes
   useEffect(() => {
     const interval = setInterval(async () => {
       const newToken = await refreshAccessToken();
       if (newToken) {
         console.log("🔄 Access token refreshed");
       }
-    }, 14 * 60 * 1000); // 14 minutes
+    }, 14 * 60 * 1000);
 
     return () => clearInterval(interval);
   }, []);
