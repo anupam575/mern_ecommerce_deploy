@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "MERN Ecommerce Frontend",
-  "homepage": "https://your-frontend.vercel.app",
+  "homepage": "https://mernecommercedeploy.vercel.app",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
