@@ -1,0 +1,71 @@
+.register-box {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 100%;        /* full width by default */
+  max-width: 480px;   /* lekin max 450px tak */
+  box-sizing: border-box;
+  margin: 0 10px;     /* small padding from edges on mobile */
+}
+
+.register-title {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.register-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-button:hover {
+  background-color: #0056b3;
+}
+
+.register-message {
+  text-align: center;
+  margin-top: 10px;
+  color: #333;
+}
+
+.register-user-box {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fafafa;
+}
+
+.register-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: block;
+  margin: 10px auto;
+}
+
+.no-avatar {
+  text-align: center;
+}
+
+/* Optional: extra responsiveness for very small screens */
+@media (max-width: 500px) {
+  .register-box {
+    padding: 15px;
+  }
+}

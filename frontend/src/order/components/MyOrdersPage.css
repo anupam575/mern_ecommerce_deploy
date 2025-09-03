@@ -1,0 +1,108 @@
+/* ===== My Orders Container ===== */
+.my-orders-container {
+  max-width: 1200px;
+  margin: 100px auto 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Page Title */
+.my-orders-container h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  color: #111;
+}
+
+/* ===== Orders Table ===== */
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+}
+
+.orders-table th {
+  background-color: #f7f7f7;
+  font-weight: 600;
+  color: #111;
+}
+
+.orders-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.orders-table td {
+  color: #555;
+}
+
+/* ===== View Button ===== */
+.view-btn {
+  padding: 8px 12px;
+  background-color: #2874f0;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.view-btn:hover {
+  background-color: #0d5cd6;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .my-orders-container {
+    padding: 20px;
+    margin: 80px 15px;
+  }
+
+  .orders-table th,
+  .orders-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .my-orders-container {
+    padding: 15px;
+    margin: 60px 10px;
+  }
+
+  .my-orders-container h2 {
+    font-size: 24px;
+  }
+
+  .orders-table th,
+  .orders-table td {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .view-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  /* Optional: make table scrollable on mobile */
+  .orders-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,134 @@
+/* ===== Container ===== */
+.update-product-container {
+  max-width: 800px;
+  margin: 100px auto 50px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.update-heading {
+  font-size: 28px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #232f3e;
+}
+
+/* ===== Form ===== */
+.update-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== Form Groups ===== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.form-group input,
+.form-group textarea,
+.form-file {
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-file:focus {
+  outline: none;
+  border-color: #2874f0; /* Amazon-style focus color */
+  box-shadow: 0 0 5px rgba(40, 116, 240, 0.3);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* ===== Image Preview ===== */
+.image-preview {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.preview-img {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* ===== Submit Button ===== */
+.update-button {
+  padding: 12px;
+  background-color: #2874f0; /* Amazon-style blue */
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.update-button:hover {
+  background-color: #0d5cd6;
+  transform: translateY(-2px);
+}
+
+.update-button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .update-product-container {
+    padding: 20px;
+    margin: 80px 15px;
+  }
+
+  .update-heading {
+    font-size: 24px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-file {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .update-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .preview-img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  .update-product-container {
+    padding: 15px;
+    margin: 60px 10px;
+  }
+}

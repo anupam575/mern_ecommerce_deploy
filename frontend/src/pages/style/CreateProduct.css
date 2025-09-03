@@ -1,0 +1,84 @@
+.create-product-container {
+  width: 100%;          /* full width by default */
+  max-width: 500px;     /* lekin desktop me max 500px */
+  margin: 70px auto;
+  padding: 30px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* padding include width me */
+}
+
+.create-product-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.create-product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.create-product-form input,
+.create-product-form textarea {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%; /* responsive input/textarea */
+  box-sizing: border-box;
+}
+
+.create-product-form input:focus,
+.create-product-form textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.create-product-form button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.create-product-form button:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+/* ===== Preview Image ===== */
+.preview-image {
+  width: 100%;          /* Full width of container */
+  height: auto;         /* Maintain aspect ratio */
+  border-radius: 8px;   /* Rounded corners */
+  border: 1px solid #ccc; /* Light border */
+  object-fit: cover;    /* Cover container nicely */
+  margin-top: 10px;     /* Space from input or label */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: block;       /* Avoid inline spacing issues */
+}
+
+/* ===== Responsive Preview Image ===== */
+@media (max-width: 576px) {
+  .preview-image {
+  }
+}
+
+
+/* Optional: mobile extra spacing */
+@media (max-width: 550px) {
+  .create-product-container {
+    padding: 20px;
+    margin: 50px 10px;
+  }
+}

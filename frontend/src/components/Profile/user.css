@@ -1,0 +1,104 @@
+.user-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.user-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.user-container p {
+  margin: 10px 0;
+  font-size: 0.95rem;
+}
+
+.user-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.user-container form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-container form label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #555;
+}
+
+.user-container form input[type="text"],
+.user-container form input[type="email"],
+.user-container form input[type="file"] {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.user-container form input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.user-container form button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.user-container form button:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+.user-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 10px;
+  border: 2px solid #007bff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .user-container {
+    padding: 20px;
+    margin: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-container {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .user-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .user-container form input,
+  .user-container form button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
